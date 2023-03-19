@@ -23,7 +23,7 @@
                     <p>February 5, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Office features an Ubuntu web server that&#8217;s hosting a WordPress site and a separate chat forum site for employees&#46; I&#8217;ll find and exploit a local file inclusion to leak the WordPress configuration file to get an administrator password &#40;although this password is possible to obtain through brute force&#41;&#46; With access to the WordPress site as an administrative user&#44; I&#8217;ll modify a PHP theme to get a reverse shell on the box&#46; Once on the box&#44; I&#8217;ll notice a Webmin instance running behind the firewall and port forward the site to my machine with SSH&#46; Lastly&#44; I&#8217;ll use Metasploit to exploit Webmin and get a root shell&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -34,7 +34,7 @@
                     <p>February 3, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Zero is a Domain Controller running many different services&#46; I&#8217;ll enumerate these services with a variety of commands&#44; but ultimately come up short&#46; I&#8217;ll use kerbrute to find valid usernames on the machine&#44; although this step was not necessary for the completion of the box&#46; Zero will be completed using the ZeroLogon exploit from Impacket to clear the Domain Administrator&#8217;s password&#46; From there&#44; I&#8217;ll use secretsdump to exfiltrate the empty Administrator hash and will remotely login using a pass-the-hash attack&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -45,7 +45,7 @@
                     <p>February 3, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>&#8220;Shares&#8221; features a Ubuntu web server hosting a static website and a NFS share&#46; I&#8217;ll mount the NFS share to my local machine and find an encrypted private SSH key inside&#46; I&#8217;ll crack the password on the private key and login to the box via SSH&#46; Once on the box as the &#8220;amir&#8221; user&#44; I&#8217;ll use their sudo privileges to use both python3 and pkexec to escalate my privileges to the amy user&#46; As the amy user&#44; I&#8217;ll use their sudo privileges to escalate to the root user with the ssh command&#46; </p>
                 </div>
             </div>
         </div>

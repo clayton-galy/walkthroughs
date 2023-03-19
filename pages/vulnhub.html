@@ -23,7 +23,7 @@
                     <p>April 14, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Napping features a Ubuntu web server with a simple login page and a way to register a new user&#46; I&#8217;ll create a new user and login to the website&#46; Once logged in&#44; I am able to send a link to an administrative user who will automatically click on my link&#46; With this in mind&#44; I&#8217;ll take advantage of the tabnabbing vulnerability which will allow me to phish the administrative user&#8217;s credentials&#46; I&#8217;ll use the credentials to login via SSH as the &#8220;daniel&#8221; user who has write access to a file that&#8217;s being executed by a cronjob&#46; I&#8217;ll take advantage of this to get a shell as the &#8220;adrian&#8221; user&#46; The adrian user has sudo privileges to execute vim as the root user&#46; I&#8217;ll use this to get a shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -34,7 +34,7 @@
                     <p>April 12, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>LupinOne is a Ubuntu web server running a simple website&#46; I&#8217;ll use wfuzz to fuzz for files&#44; finding a hint towards hidden files on the web server&#46; I&#8217;ll create a custom wordlist to fuzz the site further to eventually find an encoded&#44; encrypted private SSH key&#46; Once I crack the password for the key&#44; I&#8217;ll login to the box via SSH as the &#8220;icex64&#8221; user&#46; The icex64 user can run a python script as another user on the box&#46; I&#8217;ll pollute a library the script is using to get a shell as the arsene user&#46; The arsene user can run the pip command as root&#44; and I&#8217;ll use this to get a shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -45,7 +45,7 @@
                     <p>April 12, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Breakout is a Debian web server running an instance of Webmin&#46; There is a comment in the HTML of the website that contains an encoded password&#46; I&#8217;ll decode this password to login to the Webmin site&#46; Once logged in&#44; I&#8217;ll create a cronjob to execute a reverse shell to get a shell on the box as the cyber user&#46; On the box&#44; the tar command has special capabilities set to read all files&#46; I&#8217;ll use this to my advantage by reading a backup file I don&#8217;t usually have read access to to get the root user&#8217;s cleartext password&#46;</p>
                 </div>
             </div>
         </div>

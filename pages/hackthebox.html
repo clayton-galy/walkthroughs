@@ -23,7 +23,7 @@
                     <p>July 22, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Forest is a Domain Controller running on Windows Server 2016&#46; I&#8217;ll enumerate LDAP to find valid usernames for user&#44; machine&#44; and service accounts&#46; With a list of valid users&#44; I&#8217;ll perform an ASREPRoasting attack to discover a service account that isn&#8217;t using Kerberos preauthentication and get their password hash&#46; I&#8217;ll use hashcat to crack the password&#44; then remotely login to the DC with the password as the &#8220;svc-alfresco&#8221; service account&#46; With credentials&#44; I&#8217;ll run Bloodhound to find an attack chain that leads to getting access as the Domain Administrator&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -34,7 +34,7 @@
                     <p>July 20, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Heist features a Windows server running an IIS site and RPC&#46; I&#8217;ll find a login page on the website&#44; and I&#8217;m able to login as a guest user&#46; With access to the site&#44; I&#8217;ll find an attachment in a forum with a password hash and an encoded cisco password&#46; I&#8217;ll use JohnTheRipper to crack the password hash and a python tool to decode the cisco password&#46; After&#44; I&#8217;ll brute force user SID&#8217;s to find valid accounts on the server&#46; With a list of usernames and passwords&#44; I&#8217;ll perform a password spray to find a successful credential pair&#46; I&#8217;ll use the credentials to remote into the box&#46; On the box&#44; I&#8217;ll notice that FireFox is running and I&#8217;ll use procdump to dump the process information to find a cleartext password for the Administrator user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -45,7 +45,7 @@
                     <p>July 20, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Traverxec is a Debian web server running Nostromo 1&#46;9&#46;6&#46; The web application is vulnerable to a remote command execution and I&#8217;ll use CVE-2019-16278 to get a shell on the box as the www-data user&#46; With a shell on the box&#44; I&#8217;ll find a password hash in the &#46;htpasswd file in the web directory and crack the password hash with hashcat and JohnTheRipper&#46; However&#44; this password does not grant further access&#46; To progress&#44; I&#8217;ll discover a directory through the Nostromo configuration file which contains an encrypted private SSH key&#46; I&#8217;ll crack the password for the key and get access as the david user via SSH&#46; Lastly&#44; I&#8217;ll find that the david user can run the journalctl command with sudo by analyzing a script on the box and use it to get a shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -56,7 +56,7 @@
                     <p>July 20, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Bastion is a Windows Server 2016 machine running several services&#46; I&#8217;ll start by discovering a virtual hard drive in a public SMB share and mount it to my local machine&#46; With access to all of the files&#44; I&#8217;ll grab the SAM&#44; SYSTEM&#44; and SECURITY registry hives and dump user password hashes&#46; I&#8217;ll then find that I can crack the &#8220;L4mpje&#8221; user&#8217;s password and I&#8217;ll use it to login to the box&#46; On the box&#44; I&#8217;ll find a configuration file for the mRemoteNG application which contains an encrypted password&#46; I&#8217;ll use a python tool to decrypt the password and login to the box as the Administrator user with the password&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -67,7 +67,7 @@
                     <p>July 17, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Writeup is a Debian web server running an Apache site&#46; I&#8217;ll find resources on this site from the robots&#46;txt file which leads me to a page with CMS details in the source code&#46; This particular CMS version is vulnerable to an unauthenticated SQL injection and I&#8217;ll use CVE-2019-9053 to dump user password hashes from the CMS and crack them&#46; After cracking a password&#44; I&#8217;ll use the credential pair to login to the box via SSH as the &#8220;jkr&#8221; user&#46; On the box&#44; I&#8217;ll monitor running processes with pspy64 to discover a relative path is being used for a command when I login via SSH&#46; I&#8217;ll abuse my write access to &#47;usr&#47;local&#47;bin to create my own malicious command&#44; hijacking the legitimate functionality to get a shell on the box as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -78,7 +78,7 @@
                     <p>July 17, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Active features a Domain Controller with many services running&#46; I&#8217;ll start by finding a cpassword for the service account &#8220;SVC-TGS&#8221;&#39; from a Groups&#46;xml file located in the public SMB share&#46; I&#8217;ll decrypt this password and use the credential pair to perform a Kerberoasting attack on the DC to get a hash for the Administrator&#46; I&#8217;ll then use JohnTheRipper to crack the password hash and get a shell as nt authority&#92;system&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -89,7 +89,7 @@
                     <p>July 17, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>OpenAdmin is a Ubuntu web server running Apache&#46; I&#8217;ll run some directory scanners to find an instance of OpenNetAdmin&#46; The particular version of OpenNetAdmin is vulnerable to a remote command injection&#46; I&#8217;ll use an exploit found online to abuse this vulnerability to get a shell on the box as the www-data user&#46; Once on the box&#44; I&#8217;ll go into the ONA configuration files to find a password for the jimmy user&#46; As the jimmy user&#44; I&#8217;ll discover a website behind a firewall that I couldn&#8217;t see before&#46; I&#8217;ll port forward this website to my local machine with SSH&#46; On the site&#44; I get a password hash that can be cracked with JohnTheRipper&#46; Using the password&#44; I&#8217;ll login to the box as the joanna user&#46; The joanna user has sudo privileges to run the nano command on a specific file&#46; I&#8217;ll abuse this to execute arbitrary commands as the root user to escalate my privileges to the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -100,7 +100,7 @@
                     <p>July 15, 2021</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Shocker is a Ubuntu web server running Apache&#46; After running gobuster on the site&#44; I&#8217;ll find a cgi-bin directory and a user&#46;sh script inside&#46; I&#8217;ll then use the shellshock vulnerability to execute arbitrary commands on the server to eventually get a shell on the box&#46; On the box as the shelly user&#44; I&#8217;ll discover that I have sudo privileges to run perl as the root user&#46; I&#8217;ll abuse this to get a shell as the root user&#46;</p>
                 </div>
             </div>
         </div>
