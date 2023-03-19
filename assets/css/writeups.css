@@ -1,0 +1,65 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+body {
+    background: rgb(63, 63, 63);
+    padding-top: 80px;
+}
+.header {
+    display: inline;
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: rgb(20, 20, 20);
+    z-index: 2;
+}
+.homelink {
+    color: white;
+}
+.writeup-link {
+    color: rgb(231, 76, 60);
+    margin-bottom: -2px;
+    font-size: 22px;
+}
+hr {
+    border: 0;
+    height: 2px;
+    background: #000000;
+    width: 80%;
+    background-image: linear-gradient(to right, rgb(160, 160, 160), rgb(0,0,0), rgb(160, 160, 160));
+}
+h2 {
+    margin-bottom: 5px;
+}
+p {
+    margin-top: 2px;
+}
+.image {
+    width: 150px;
+    height: 150px;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.title {
+    margin-left: 45px;
+}
+.maintitle {
+    color: rgb(93, 173, 226);
+    text-align: center;
+    margin-bottom: 50px;
+}
+.writeup-content {
+    margin-top: 50px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.writeupinfo {
+    margin-bottom: 50px;
+}
+.writeup-date {
+    opacity: 0.75;
+}
