@@ -23,7 +23,7 @@
                     <p>March 16, 2023</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Cold VVars is a Ubuntu web server running Apache and Samba SMB&#46; On the website&#44; I come across a login page that can be bypassed by using an XPATH injection&#46; Once logged in&#44; I am given a list of usernames and passwords&#46; Using one of the credential pairs&#44; I can log into the SMB service and view a &#8220;dev&#8221; share&#46; When I upload files to the share&#44; I can get access to the files directly from the website&#46; I&#8217;ll upload a PHP web shell and use it to get a full shell on the box as the www-data user&#46; On the box&#44; I can switch to another user using the credentials found on the website&#46; As the ArthurMorgan user&#44; I notice a strange environment variable referencing a port that wasn&#8217;t listening on the box&#46; I&#8217;ll use Netcat to open the port and start receiving data from a custom application&#46; Using the custom application&#44; I&#8217;ll drop into a VIM instance and use it to execute commands and escalate my privileges to another user on the box&#46; This new user is running a tmux session that has a root login&#46; I&#8217;ll attach to the tmux session to use the root shell&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -34,7 +34,7 @@
                     <p>March 12, 2023</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Ollie is a Ubuntu web server running Apache and a strange service on port 1337&#46; Connecting to port 1337 manually and following the prompts returns a credential pair&#46; I&#8217;ll use the credential pair to login to the phpIPAM instance on the website&#46; After&#44; I&#8217;ll utilize a remote command execution vulnerability to get a shell on the box as the www-data user&#46; I can use the same password I found earlier to escalate to the ollie user&#46; From there&#44; I&#8217;ll discover a service that is running a script every few minutes as the root user&#46; This script is writable by the ollie user and I&#8217;ll abuse this to escalate to the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -45,7 +45,7 @@
                     <p>February 1, 2023</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>ConvertMyVideo is a Ubuntu web server running Apache&#46; The site offers functionality to convert a YouTube video into a MP3 format&#46; I&#8217;ll discover that the server takes user input and runs a system command with it&#46; I&#8217;ll abuse this fact and inject my own arbitrary commands with some linux tricks to get a shell on the box as the www-data user&#46; After&#44; I&#8217;ll find a cronjob that is executing a script as root that I have write access to&#46; I&#8217;ll overwrite the script to get a shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -56,7 +56,7 @@
                     <p>February 1, 2023</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>EnterPrize is a Ubuntu web server running Apache&#46; Running feroxbuster on the site&#44; I&#8217;ll discover a composer&#46;json file that reveals the site is using TYPO3&#46; After enumerating subdomains&#44; I&#8217;ll find where the TYPO3 instance is located&#46; Looking around the TYPO3 files&#44; I&#8217;ll find a backup file of a configuration file that contains an encryption key that validates parameters that are sent to the server&#46; I&#8217;ll use this encryption key to send arbitrary parameters&#44; leading to a deserialization vulnerability that gives me remote command execution on the server&#46; I&#8217;ll use this vulnerability to get a shell on the box as the www-data user&#46; On the box&#44; I&#8217;ll find a binary that&#8217;s being regularly executed by another user&#46; I&#8217;ll use ltrace to discover a library that the binary is using that I have write access to&#46; I&#8217;ll create my own malicious library and overwrite the legitimate library to execute arbitrary commands and get a shell as the john user&#46; The john user has access to a NFS share that was hiding behind a firewall&#46; The NFS configuration shows that no&#95;root&#95;squash is enabled&#46; I&#8217;ll abuse this fact to get a shell on the box as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -67,7 +67,7 @@
                     <p>December 29, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Aratus is a CentOS web server running FTP&#44; Apache&#44; and Samba SMB&#46; I&#8217;ll get access to a public SMB share that contains many files&#46; After downloading the files&#44; I&#8217;ll perform a search across all of the files and discover an encrypted private SSH key&#46; I&#8217;ll crack the password of the key with JohnTheRipper and use it to log into the box as the simeon user&#46; On the box&#44; I&#8217;ll notice that tcpdump has special capabilities set so I can use it to sniff network traffic to and from the box&#46; In doing so&#44; I&#8217;ll find a cleartext credential pair from a HTTP request and use it to login to the box as the theodore user&#46; The theodore user has sudo privileges to run Ansible playbooks as root&#46; I&#8217;ll modify one of the playbooks to execute arbitrary commands to get a reverse shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -78,7 +78,7 @@
                     <p>December 27, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Annie is a Ubuntu server running the AnyDesk client&#46; I&#8217;ll find a CVE for a remote code execution vulnerability in this application to get a shell on the box as the annie user&#46; As the annie user&#44; I&#8217;ll find the annie user&#8217;s encrypted private SSH key and crack the password with JohnTheRipper&#46; Afterwards&#44; I&#8217;ll discover that python has special capabilities set to allow users to change the UID in their python commands without a password&#46; I&#8217;ll abuse this to get a shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -89,7 +89,7 @@
                     <p>December 27, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>BiteMe is a Ubuntu web server running Apache&#46; In the JavaScript found on the login form on the website&#44; I&#8217;ll find that syntax highlighting is enabled&#44; allowing me to view the underlying PHP code of the site&#46; I&#8217;ll abuse this to find an encoded password in the code that I can decode&#46; After attempting to login with the credentials I got&#44; I am greeted with a MFA screen&#46; I&#8217;ll use wfuzz to fuzz the MFA code until I get a code that works&#46; Once logged in&#44; I&#8217;ll use the file browser to grab an encrypted private SSH key&#46; I&#8217;ll crack the password for the key with JohnTheRipper and use the key to login to the box as the jason user&#46; I&#8217;ll use the jason user&#8217;s sudo privileges to escalate to the fred user&#44; who has sudo privileges to restart the fail2ban service&#46; I&#8217;ll change the fail2ban configuration to execute a malicious command when a ban is triggered&#46; Then I&#8217;ll restart the service&#44; trigger the ban&#44; and get an easy root shell&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -100,7 +100,7 @@
                     <p>December 8, 2022 & December 20, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>VulnNet&#58; Endgame features a Ubuntu web server running Apache&#46; I&#8217;ll enumerate subdomains to find four new endpoints&#46; One of the endpoints&#44; the blog&#44; uses an API to fetch the data for each post on the blog&#46; I&#8217;ll eventually find that this API call is vulnerable to a Blind SQL injection by conditional responses&#46; I wrote a python script to exfiltrate the data from the database&#44; before realizing the SQL injection can be modified so I can see the responses&#46; With this correction&#44; I&#8217;ll dump all of the usernames and passwords from the database&#46; Using the cleartext passwords found in the database&#44; I can crack a password hash found in another part of the database with one of the cleartext passwords&#46; With this special password&#44; I can log into a TYPO3 instance as the admin user found on one of the other subdomains&#46; Once logged in&#44; I&#8217;ll modify some settings in the TYPO3 instance so I can upload PHP files and then upload a PHP web shell&#46; With the web shell I&#8217;ll get a full shell as the www-data user on the box&#46; On the box&#44; I&#8217;ll find a FireFox profile in a user&#8217;s home directory and use it to grab a saved password&#46; With the password&#44; I&#8217;ll escalate my privileges to the system user&#46; Afterwards&#44; I&#8217;ll find that OpenSSL has all capabilities set&#46; I&#8217;ll abuse this fact to escalate my privileges to root by setting up an SSL server that can overwrite files on the box&#46; I&#8217;ll overwrite the shadow file with a password for the root user that I know to get a root shell on the box&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -111,7 +111,7 @@
                     <p>August 11 & 31, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>WWBuddy is an Ubuntu web server running Apache&#46; I&#8217;ll find a way to register a new user on the website which seems to be a chat application&#46; I&#8217;ll perform a second-order SQL injection in the username of a newly registered account and reset the password for a legitimate user to one I know&#46; Now logged in as an admin user&#44; I get access to the website logs&#46; I&#8217;ll create another new user with PHP code in the username&#46; Viewing the log file executes the PHP code and I can get a shell on the server as the www-data user&#46; On the box&#44; I&#8217;ll read SQL log files to find another password and use it to escalate to the roberto user&#46; The roberto user has a note in their home directory that hints at a potential password format for another user&#46; I&#8217;ll create my own wordlist with this format to find a password for the jenny user&#46; As the jenny user&#44; I&#8217;ll find a SUID binary that doesn&#8217;t use the full path when executing a command&#46; I&#8217;ll take advantage of this by polluting the PATH to get a shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -122,7 +122,7 @@
                     <p>August 11 & 31, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Olympus features a Ubuntu web server running an Apache website&#46; After doing some enumeration of the site&#44; I&#8217;ll find an SQL injection in a search feature on the website&#46; I&#8217;ll use the SQL injection to dump usernames and passwords from the database&#46; Using hashcat&#44; I am able to crack one of the password hashes I found in the SQL database&#46; The credential pair I found can be used to login to a chat application being hosted on a separate subdomain&#46; Once logged in&#44; I&#8217;ll find a way to upload PHP files to the server&#46; However&#44; due to the randomization of the filename&#44; I can&#8217;t directly access my PHP file I uploaded&#46; To get around this&#44; I&#8217;ll use the SQL injection to pull the exact filename so I can access my PHP web shell&#46; I&#8217;ll use the web shell to get a full shell on the box as the www-data user&#46; On the box&#44; I&#8217;ll find a SUID binary that&#8217;s owned by another user on the box&#46; I&#8217;ll use the binary as it&#8217;s intended&#44; copying one file to another location&#46; Specifically&#44; I&#8217;ll use the binary to copy the zeus user&#8217;s encrypted private SSH key to a directory I control&#46; I&#8217;ll then crack the SSH key and login as the zeus user&#46; As the zeus user&#44; I&#8217;ll discover a PHP file that&#8217;s apparently a root backdoor&#46; I&#8217;ll use the backdoor to get a shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
