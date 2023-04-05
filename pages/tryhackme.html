@@ -133,7 +133,7 @@
                     <p>August 7, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Sea Surfer is a Ubuntu web server that is running a WordPress site&#46; After some subdomain enumeration&#44; I&#8217;ll find an endpoint meant for employees that takes data and generates a PDF receipt&#46; I&#8217;ll find it&#8217;s vulnerable to XSS and turn this exploit into a SSRF by injecting an iframe&#46; Afterwards&#44; I&#8217;ll find out the service is vulnerable to LFI by utilizing a location header&#46; I&#8217;ll leak the WordPress credentials and use my administrative access to get a shell on the box&#46; On the box&#44; I&#8217;ll abuse a cronjob that&#8217;s using a tar command with a wildcard to escalate my privileges to another user&#46; To get root&#44; I&#8217;ll reuse a sudo token through GDB to get command execution as root&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -144,7 +144,7 @@
                     <p>August 3, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Undiscovered is a Ubuntu web server running RiteCMS&#46; After subdomain enumeration&#44; I&#8217;ll find a login page and brute-force the admin credentials&#46; With administrative access&#44; I&#8217;ll upload a PHP web shell to eventually get a reverse shell on the box&#46; With access&#44; I&#8217;ll mount an NFS share on my box and get access to the contents by mimicking a user on my local machine&#44; then abuse the &#8220;no&#95;root&#95;squash&#8221; configuration to get a shell as another user&#46; I&#8217;ll then find a SUID binary that allows me to read files as another user&#44; and I&#8217;ll use this to read a private SSH key to again escalate my privileges further&#46; To get root&#44; I&#8217;ll abuse special capabilities set on Vim to get a root shell&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -155,7 +155,7 @@
                     <p>July 30, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Develpy is a Ubuntu server running a custom service that pings a domain via Python&#46; I&#8217;ll inject my own Python code into the application to get command execution and eventually a shell on the box&#46; On the box&#44; I&#8217;ll find an image that has an encoded message&#46; I&#8217;ll decode the message and use the credentials found to escalate my privileges to another user&#46; To get root&#44; I&#8217;ll port forward a service running locally on the box and abuse a upload feature to get files into a directory that are being executed with a cronjob as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -166,7 +166,7 @@
                     <p>July 25, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Spring is a Ubuntu web server running the Spring framework&#46; I&#8217;ll find a &#46;git directory and dump the contents to my box and analyze the web files&#46; I&#8217;ll find a way to access the actuators to get RCE on the box and eventually a shell on the box&#46; Once on the box&#44; I&#8217;ll find a new password that follows a familiar format&#46; I&#8217;ll create a custom wordlist with this password format and find the password for another user on the box&#46; To get root&#44; I&#8217;ll utilize a feature of the web site that seemed benign at first&#44; but could be used to pollute a log file&#46; By using symlinks&#44; I am able to write the log file anywhere in the file system and I&#8217;ll abuse this by writing a public SSH key into the root user&#8217;s authenticated&#95;keys file to get access as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -177,7 +177,7 @@
                     <p>May 15, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Unbaked Pie is a Ubuntu web server running a Python based website&#46; I&#8217;ll find a cookie that is being picked&#44; and abuse this to get RCE on the box&#46; After getting a shell on a container&#44; I&#8217;ll find a SQLite file with password hashes&#46; I&#8217;ll crack one of the hashes and port forward SSH that was hiding behind a firewall and only accessible through the container&#46; I&#8217;ll discover that a specific user is using SSH from a log file and I&#8217;ll use proxychains to brute-force this user&#8217;s SSH password&#46; Once found&#44; I&#8217;ll log into the target machine via SSH through the tunnel&#46; On the box&#44; I&#8217;ll abuse a sudo configuration to run a Python script as another user&#46; I&#8217;ll first modify the Python script to get a shell on the box as the new user&#46; To get root&#44; I&#8217;ll discover the new user has a different sudo configuration that allows me to run another Python script as root and it keeps my environment variables&#46; I&#8217;ll abuse this to hijack a library the Python script uses to get a shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
@@ -188,7 +188,7 @@
                     <p>May 6 & 14, 2022</p>
                 </div>
                 <div class="writeup-desc">
-                    <p>Descriptions coming soon...</p>
+                    <p>Plotted-EMR features a Ubuntu web server running OpenEMR and a MariaDB instance&#46; This OpenEMR instance is running the &#8220;Multiple Sites Module&#8221; which can be abused to bypass the authentication&#46; Since I have admin access to the MariaDB instance without supplying a password&#44; this makes the exploit much easier to perform&#46; Due to misconfigurations&#44; I&#8217;ll create my own site via OpenEMR that will use the MariaDB instance to store its information in a new database that I will create&#46; This means I can create my own administrative credentials for my site and login as an administrative user&#46; With this access I&#8217;ll get a shell on the box via an authenticated RCE exploit&#46; On the box&#44; I&#8217;ll find a cronjob running rsync with a wildcard&#44; and I&#8217;ll abuse this to escalate my privileges&#46; To get root&#44; I&#8217;ll use special capabilities set on ruby to get a shell as the root user&#46;</p>
                 </div>
             </div>
             <div class="writeupinfo">
